@@ -1,3 +1,6 @@
-[submodule "chocolateytemplates"]
-	path = chocolateytemplates
-	url = https://github.com/chocolatey/chocolateytemplates.git
+[submodule "tools/haskell-ide-engine"]
+	path = tools/haskell-ide-engine
+	url = https://github.com/haskell/haskell-ide-engine
+[submodule "tools/haskell-debug-adapter"]
+	path = tools/haskell-debug-adapter
+	url = https://github.com/phoityne/haskell-debug-adapter

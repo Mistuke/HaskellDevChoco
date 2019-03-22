@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
     <metadata>
-        <id>haskell-dev-head</id>
+        <id>haskell-dev-ide-head</id>
         <version>%build.version%-B%build.date%</version>
-        <title>Haskell Development Environment (Nightly build)</title>
+        <title>Haskell Development Environment in VSCode (Nightly build)</title>
         <authors>Tamar Christina</authors>
         <owners>Tamar Christina</owners>
         <licenseUrl>https://github.com/mistuke/haskell-dev/blob/%build.commit.hash%/LICENSE</licenseUrl>
         <projectUrl>https://github.com/mistuke/haskell-dev/tree/%build.commit.hash%</projectUrl>
-        <iconUrl>https://mistuke.blob.core.windows.net/binaries/haskell-dev/haskell-dev.png</iconUrl>
+        <iconUrl>https://mistuke.blob.core.windows.net/binaries/haskell-dev/haskell-dev-ide.png</iconUrl>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <description>
         ```
@@ -30,6 +30,23 @@
         Lastly in order to facilitate package installations a new CmdLet `mingw64-pkg` is created to make it easier to install
         native dependencies such as `gtk`.
 
+        This package uses VSCode as the base along with the following packages:
+
+        * vscode-hie-server
+        * language-haskell
+        * phoityne-vscode
+        * hoogle-vscode
+        * better-comments
+        * bookmarks
+        * bracket-pair-colorizer-2
+        * gitlens
+        * guides
+        * vscode-great-icons
+        * indented-block-highlighting
+        * indent-rainbow
+
+        Preconfigured to work out of the box for Haskell dev
+
         For AppVeyor use we recommend installing the ghc and cabal packages directly.
         </description>
         <summary>Complete Haskell development environment using Cabal.</summary>
@@ -39,12 +56,11 @@
         <bugTrackerUrl>https://github.com/mistuke/haskell-dev/issues</bugTrackerUrl>
         <projectSourceUrl>https://github.com/mistuke/haskell-dev/</projectSourceUrl>
         <dependencies>
-            <dependency id="ghc-head" version="8.6.4" />
-            <dependency id="cabal-head" version="2.4.0.0" />
-            <dependency id="msys2" />
+            <dependency id="haskell-dev-head" />
         </dependencies>
     </metadata>
     <files>
+        <file src="tools\chocolateyInstall.ps1" target="tools\chocolateyInstall.ps1" />
         <file src="LICENSE.txt" target="LICENSE.txt" />
     </files>
 </package>
