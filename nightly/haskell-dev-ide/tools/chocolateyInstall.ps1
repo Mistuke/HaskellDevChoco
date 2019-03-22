@@ -137,4 +137,5 @@ Install-Ext 'emmanuelbeziat.vscode-great-icons'
 Install-Ext 'CoenraadS.bracket-pair-colorizer-2'
 Install-Ext 'byi8220.indented-block-highlighting'
 Install-Ext 'oderwat.indent-rainbow'
+Install-Ext 'dcasella.monokai-plusplus'
 Configure-Extensions
