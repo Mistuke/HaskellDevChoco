@@ -1,5 +1,5 @@
-$version     = '%build.version%-B%build.date%'
-$packageName = 'haskell-dev-ide-head'
+$version     = '0.0.1'
+$packageName = 'haskell-dev-ide-hie'
 $url         = '%deploy.url.32bit%'
 $url64       = '%deploy.url.64bit%'
 
@@ -127,15 +127,11 @@ refreshenv
 Configure-Cabal
 Install-Ext 'alanz.vscode-hie-server'
 Install-Ext 'justusadam.language-haskell'
-Install-Ext 'phoityne.phoityne-vscode'
 Install-Ext 'jcanero.hoogle-vscode'
 Install-Ext 'aaron-bond.better-comments'
 Install-Ext 'alefragnani.Bookmarks'
-Install-Ext 'eamodio.gitlens'
 Install-Ext 'spywhere.guides'
-Install-Ext 'emmanuelbeziat.vscode-great-icons'
 Install-Ext 'CoenraadS.bracket-pair-colorizer-2'
 Install-Ext 'byi8220.indented-block-highlighting'
 Install-Ext 'oderwat.indent-rainbow'
-Install-Ext 'dcasella.monokai-plusplus'
 Configure-Extensions

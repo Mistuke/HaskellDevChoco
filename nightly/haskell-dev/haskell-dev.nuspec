@@ -40,7 +40,7 @@
         <projectSourceUrl>https://github.com/mistuke/haskell-dev/</projectSourceUrl>
         <dependencies>
             <dependency id="ghc-head" version="8.6.4" />
-            <dependency id="cabal-head" version="2.4.0.0" />
+            <dependency id="cabal-head" version="3.0.0.0" />
             <dependency id="msys2" />
         </dependencies>
     </metadata>

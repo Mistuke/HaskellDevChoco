@@ -1,22 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
     <metadata>
-        <id>haskell-dev-ide-head</id>
-        <version>%build.version%-B%build.date%</version>
-        <title>Haskell Development Environment in VSCode (Nightly build)</title>
+        <id>haskell-dev-ide-hie</id>
+        <version>0.0.1</version>
+        <title>Haskell Development Environment in VSCode with HIE</title>
         <authors>Tamar Christina</authors>
         <owners>Tamar Christina</owners>
-        <licenseUrl>https://github.com/mistuke/haskell-dev/blob/%build.commit.hash%/LICENSE</licenseUrl>
-        <projectUrl>https://github.com/mistuke/haskell-dev/tree/%build.commit.hash%</projectUrl>
+        <licenseUrl>https://github.com/Mistuke/HaskellDevChoco/blob/master/LICENSE</licenseUrl>
+        <projectUrl>https://github.com/Mistuke/HaskellDevChoco/</projectUrl>
         <iconUrl>https://mistuke.blob.core.windows.net/binaries/haskell-dev/haskell-dev-ide.png</iconUrl>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <description>
-        ```
-        NOTE: This is a nightly build of the haskell-dev tool for Haskell intended for eco-system support.
-        It is built from commit %build.commit.hash% from the git repository.
-        No support is provided for these builds.  For supported versions see the 'haskell-dev' package.
-        ```
-
         This is an opinionated automated environment for performing Haskell development on windows
         using GHC and Cabal along with MSYS2.  The goal of the project is to create as minimal of
         indirections between you and the tools as possible in order to simplify things and make
@@ -30,25 +24,43 @@
         Lastly in order to facilitate package installations a new CmdLet `mingw64-pkg` is created to make it easier to install
         native dependencies such as `gtk`.
 
+
+            C:\PS> mingw-pkg install gtk2
+
+        This CmdLet makes it easier to install native Mingw-w64 packages into MSYS2 such
+        that cabal-install and GHC can use them without any other configuration required.
+
+        This will not allow installation of MSYS2 packages.  Your global namespace will
+        not be poluted by the use of this CmdLet.
+
+        The action to perform. Must be one of install, uninstall, update or shell.
+
+        - install: install a new native package
+        - uninstall: remove native package
+        - update: sync the repositories, will not upgrade any packages.
+        - shell: open a bash shell
+
+        An optional last parameter can be used to force a prompt before installing a package.
+        Default is off.
+
+            C:\PS> mingw-pkg install gtk2 $true
+
         This package uses VSCode as the base along with the following packages:
 
         * vscode-hie-server
         * language-haskell
-        * phoityne-vscode
         * hoogle-vscode
         * better-comments
         * bookmarks
         * bracket-pair-colorizer-2
-        * gitlens
         * guides
-        * vscode-great-icons
         * indented-block-highlighting
         * indent-rainbow
-        * monokai-plusplus
 
         Preconfigured to work out of the box for Haskell dev
 
-        For AppVeyor use we recommend installing the ghc and cabal packages directly.
+        For AppVeyor use we recommend installing the ghc and cabal packages directly as to not install msys2 twice.
+        You will still have access to mingw-pkg.
         </description>
         <summary>Complete Haskell development environment using Cabal.</summary>
         <releaseNotes>https://github.com/mistuke/haskell-dev/blob/%build.commit.hash%/README.md</releaseNotes>
@@ -57,9 +69,8 @@
         <bugTrackerUrl>https://github.com/mistuke/haskell-dev/issues</bugTrackerUrl>
         <projectSourceUrl>https://github.com/mistuke/haskell-dev/</projectSourceUrl>
         <dependencies>
-            <dependency id="haskell-dev-head" />
+            <dependency id="haskell-dev" />
             <dependency id="vscode" />
-            <dependency id="hackfont" />
         </dependencies>
     </metadata>
     <files>

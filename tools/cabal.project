@@ -1,3 +1,11 @@
 packages:
          ./haskell-debug-adapter
          ./haskell-ide-engine
+         ./haskell-ide-engine/hie-plugin-api/
+
+         ./haskell-ide-engine/submodules/HaRe
+         ./haskell-ide-engine/submodules/brittany
+         ./haskell-ide-engine/submodules/cabal-helper/
+         ./haskell-ide-engine/submodules/floskell
+         ./haskell-ide-engine/submodules/ghc-mod/
+         ./haskell-ide-engine/submodules/ghc-mod/core/

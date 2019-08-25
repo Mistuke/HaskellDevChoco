@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+    <metadata>
+        <id>haskell-dev</id>
+        <version>0.0.1</version>
+        <title>Haskell Development Environment</title>
+        <authors>Tamar Christina</authors>
+        <owners>Tamar Christina</owners>
+        <licenseUrl>https://github.com/Mistuke/HaskellDevChoco/blob/master/LICENSE</licenseUrl>
+        <projectUrl>https://github.com/Mistuke/HaskellDevChoco/</projectUrl>
+        <iconUrl>https://mistuke.blob.core.windows.net/binaries/haskell-dev/haskell-dev.png</iconUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>
+        This is an opinionated automated environment for performing Haskell development on windows
+        using GHC and Cabal along with MSYS2.  The goal of the project is to create as minimal of
+        indirections between you and the tools as possible in order to simplify things and make
+        things easier to understand and debug.  The core premise of the project is to integrate into
+        Windows and not box off or isolate Haskell tools from other tools while using no or as few
+        global state as possible.
+
+        This package will automatically configure msys2 for use by cabal.  If you already have msys2
+        install then nothing else needs to be done. Otherwise msys2 will be installed for you.
+
+        Lastly in order to facilitate package installations a new CmdLet `mingw64-pkg` is created to make it easier to install
+        native dependencies such as `gtk`.
+
+            C:\PS> mingw-pkg install gtk2
+
+        This CmdLet makes it easier to install native Mingw-w64 packages into MSYS2 such
+        that cabal-install and GHC can use them without any other configuration required.
+
+        This will not allow installation of MSYS2 packages.  Your global namespace will
+        not be poluted by the use of this CmdLet.
+
+        The action to perform. Must be one of install, uninstall, update or shell.
+
+        - install: install a new native package
+        - uninstall: remove native package
+        - update: sync the repositories, will not upgrade any packages.
+        - shell: open a bash shell
+
+        An optional last parameter can be used to force a prompt before installing a package.
+        Default is off.
+
+            C:\PS> mingw-pkg install gtk2 $true
+
+        For AppVeyor use we recommend installing the ghc and cabal packages directly as to not install msys2 twice.
+        You will still have access to mingw-pkg.
+        </description>
+        <summary>Complete Haskell development environment using Cabal.</summary>
+        <releaseNotes>https://github.com/Mistuke/HaskellDevChoco/blob/master/README.md</releaseNotes>
+        <copyright>Copyright (c) 2019, Tamar Christina</copyright>
+        <tags>cabal ghc haskell</tags>
+        <bugTrackerUrl>https://github.com/Mistuke/HaskellDevChoco/issues</bugTrackerUrl>
+        <projectSourceUrl>https://github.com/Mistuke/HaskellDevChoco</projectSourceUrl>
+        <dependencies>
+            <dependency id="ghc-head" version="8.8.1" />
+            <dependency id="cabal-head" version="3.0.0.0" />
+            <dependency id="msys2" />
+        </dependencies>
+    </metadata>
+    <files>
+        <file src="LICENSE.txt" target="LICENSE.txt" />
+    </files>
+</package>
